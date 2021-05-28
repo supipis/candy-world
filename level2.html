@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aframe/0.7.1/aframe.min.js"></script>
+    <script src="https://codechangers.com/physics.js"></script>
+    <script src="https://unpkg.com/aframe-environment-component@1.1.0/dist/aframe-environment-component.min.js"></script>
+  </head>
+  <body>
+    <a-scene id="myScene">
+      <a-camera id="myCamera" pointer-lock-enabled="true" position="0 1 0">
+        <a-cursor intersection-spawn="event: click; mixin: voxel"></a-cursor>
+      </a-camera>
+      <a-box dynamic-body position="-1 5.5 -3" rotation="0 45 0" color="#4CC3D9"></a-box>
+      <a-sphere dynamic-body position="0 7.25 -5" radius="1.25" color="#EF2D5E"></a-sphere>
+      <a-cylinder dynamic-body position="1 10.75 -3" radius="0.5" height="1.5" color="#FFC65D"></a-cylinder>
+      <a-gltf-model dynamic-body id="pole1" src="cane.glb" animation-mixer="clip: *;" position="5 10 -5" scale=".1 .1 .1" rotation="0 180 0"></a-gltf-model>
+      <a-gltf-model dynamic-body id="pole1" src="cane.glb" animation-mixer="clip: *;" position="3 15 -8" scale=".1 .1 .1" rotation="0 45 0"></a-gltf-model>
+      <a-plane static-body position="0 -0.02 -4" rotation="-90 0 0" width="400" height="400" color="#7BC8A4"></a-plane>
+      <a-sky color="#ECECEC"></a-sky>
+      <a-entity environment="preset:forest;"></a-entity>
+    </a-scene>
+  </body>
+  <script src="https://codechangers.com/camps2019/vr/controllers.js"></script>
+  <script src="https://codechangers.com/camps2019/vr/buttons.js"></script>
+  <script>
+      var myScene = document.getElementById('myScene');
+var myCamera = document.getElementById('myCamera');
+
+function getDirection(camera, speed) {
+    // you can find this code snippet at
+    // https://pastebin.com/B4fJ4yBg
+    var y = camera.getAttribute('rotation').y + 90;
+    var x = camera.getAttribute('rotation').x;
+
+    var moveX = Math.cos(y / 360 * (Math.PI * 2));
+    var moveY = Math.sin(x / 360 * (Math.PI * 2));
+    var moveZ = Math.sin(y / 360 * (Math.PI * 2));
+    var moveXRatio = (Math.pow(moveX, 2)) / (Math.pow(moveX, 2) + Math.pow(moveZ, 2));
+    var moveZRatio = (Math.pow(moveZ, 2)) / (Math.pow(moveX, 2) + Math.pow(moveZ, 2));
+
+    if (moveX <= 0) {
+        moveX = -Math.sqrt((1 - Math.pow(moveY, 2)) * moveXRatio);
+    } else {
+        moveX = Math.sqrt((1 - Math.pow(moveY, 2)) * moveXRatio);
+    }
+
+    if (moveZ <= 0) {
+        moveZ = -Math.sqrt((1 - Math.pow(moveY, 2)) * moveZRatio);
+    } else {
+        moveZ = Math.sqrt((1 - Math.pow(moveY, 2)) * moveZRatio);
+    }
+
+    return { x: moveX * speed, y: moveY * speed, z: -moveZ * speed };
+}
+  </script>
+  <script src="script.js"></script>
+</html>

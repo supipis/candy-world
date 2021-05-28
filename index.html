@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="https://unpkg.com/aframe@latest"></script>
+    <script src="https://unpkg.com/aframe-environment-component@1.2.0/dist/aframe-environment-component.min.js"></script>
+    
+</head>
+    <body>
+        
+        <a-scene background="" environment="preset: forest; skyType: gradient; skyColor: #008bf5; horizonColor: #f2d778; ground: spikes; groundTexture: walkernoise; groundColor: #a1c9d3; groundColor2: #e97c16; dressing: mushrooms; gridColor: #ffffff" inspector="" keyboard-shortcuts="" screenshot="" vr-mode-ui="" device-orientation-permission-ui="" fog="color: #c8c38a; far: 83.99999999999999; density: 0" visible="">
+            <a-camera position="-40.45 1.6 80">
+                <a-cursor intersection-spawn="event: click; mixin: voxel"></a-cursor>
+            </a-camera>
+    
+        <div class="a-loader-title" style="display: none;">Dream world</div>
+        <a-entity class="environment" position="0 50 0" light="type: hemisphere; color: #7fc4fa; intensity: 0.6; groundColor: #a1c9d3" visible=""></a-entity><a-entity class="environment" position="-1.2 0.88 -0.55" light="intensity: 0.6; shadowCameraLeft: -10; shadowCameraBottom: -10; shadowCameraRight: 10; shadowCameraTop: 10" visible=""></a-entity><a-entity rotation="-90 0 0" class="environmentGround environment" visible="" scale="1 1 4.18" shadow="cast: false; receive: false"></a-entity><a-entity class="environmentDressing environment" visible=""></a-entity><a-sky radius="200" theta-length="110" class="environment" material="shader: gradientshader; topColor: #008bf5; bottomColor: #f2d778" visible="" geometry=""></a-sky>
+      
+        <a-entity class="house">
+        <a-gltf-model src="house.glb" animation-mixer="clip: *;"></a-gltf-model>
+    </a-entity>
+    
+    <a-entity class="candycane">
+        <a-gltf-model id="pole1" src="cane.glb" animation-mixer="clip: *;" position="15 0 15" scale=".2 .2 .2" rotation="0 180 0"></a-gltf-model>
+        <a-gltf-model id="pole2" src="cane.glb" animation-mixer="clip: *;" position="-15 0 15" scale=".2 .2 .2"></a-gltf-model>
+        <a-gltf-model id="pole3" src="cane.glb" animation-mixer="clip: *;" position="-16 0 50" scale=".2 .2 .2"></a-gltf-model>
+        <a-gltf-model id="pole4" src="cane.glb" animation-mixer="clip: *;" position="-1 0 40" scale=".2 .2 .2"></a-gltf-model>
+        <a-gltf-model id="pole5" src="cane.glb" animation-mixer="clip: *;" position="5 0 65" scale=".2 .2 .2"></a-gltf-model>
+        <a-gltf-model id="pole6" src="cane.glb" animation-mixer="clip: *;" position="-10 0 27" scale=".2 .2 .2"></a-gltf-model>
+        <a-gltf-model id="pole7" src="cane.glb" animation-mixer="clip: *;" position="-20 0 60" scale=".2 .2 .2"></a-gltf-model>
+        <a-gltf-model id="pole8" src="cane.glb" animation-mixer="clip: *;" position="-30 0 90" scale=".2 .2 .2"></a-gltf-model>
+        <a-gltf-model id="pole9" src="cane.glb" animation-mixer="clip: *;" position="-60 0 40" scale=".2 .2 .2"></a-gltf-model>
+        <a-gltf-model id="pole10" src="cane.glb" animation-mixer="clip: *;" position="10 0 100" scale=".2 .2 .2"></a-gltf-model>
+        <a-gltf-model id="pole11" src="cane.glb" animation-mixer="clip: *;" position="50 0 90" scale=".2 .2 .2"></a-gltf-model>
+        <a-gltf-model id="pole12" src="cane.glb" animation-mixer="clip: *;" position="-60 0 55" scale=".2 .2 .2"></a-gltf-model>
+        <a-gltf-model id="pole13" src="cane.glb" animation-mixer="clip: *;" position="40 0 38" scale=".2 .2 .2"></a-gltf-model>
+        <a-gltf-model id="pole14" src="cane.glb" animation-mixer="clip: *;" position="60 0 25" scale=".2 .2 .2"></a-gltf-model>
+        <a-gltf-model id="pole15" src="cane.glb" animation-mixer="clip: *;" position="35 0 10" scale=".2 .2 .2"></a-gltf-model>
+        <a-gltf-model id="pole16" src="cane.glb" animation-mixer="clip: *;" position="-90 0 20" scale=".2 .2 .2"></a-gltf-model>
+        <a-gltf-model id="pole17" src="cane.glb" animation-mixer="clip: *;" position="25 0 70" scale=".2 .2 .2"></a-gltf-model>
+    </a-entity>
+    
+    
+    
+        
+    
+      
+        
+    
+    <a-entity class="doors">
+    <a-box dynamic-body id="nextlevel" position="25 5 22.148" scale="4 10 0.5" color="red" material="" geometry=""></a-box>
+    <a-box id=normal2></a-box>
+    <a-box id=normal3></a-box>
+    <a-box id=normal4></a-box>
+    <a-box id=normal5></a-box>
+    <a-box id=normal6></a-box>
+    <a-box id=normal7></a-box>
+    <a-box id=normal8></a-box>
+    <a-box id=normal9></a-box>
+    <a-box id=normal10></a-box>
+</a-entity>
+    
+        
+    
+        </a-scene>
+        
+        <script>
+          let target=document.getElementById("nextlevel")
+          target.addEventListener("click", e=>{
+            location.href= "level2.html"
+            })
+        </script>
+
+    </body>
+    </html>
