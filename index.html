@@ -4,8 +4,19 @@
     <script src="https://unpkg.com/aframe@latest"></script>
     <script src="https://unpkg.com/aframe-environment-component@1.2.0/dist/aframe-environment-component.min.js"></script>
     <script src="https://unpkg.com/aframe-event-set-component@5.0.0/dist/aframe-event-set-component.min.js"></script>
+    <link rel="stylesheet" href="styles.css">
 </head>
     <body>
+        <div class="instruction-container" id="hide-div">
+            <h1>Welcome to the candy land!</h1>
+            <h2>The Secret Portal</h2>
+            <p>The little girl is stuck in the candy land and your first task is to
+                find the correct door to teleport.<br><br>
+                <em><b>Click</b></em> on the door to find the secret portal.
+            </p>
+            <button id="start" onclick="hide()">START</button>
+        
+        </div>
         
         <a-scene background=""
             environment="preset: forest; skyType: gradient; skyColor: #008bf5; horizonColor: #f2d778; ground: spikes; groundTexture: walkernoise; groundColor: #a1c9d3; groundColor2: #e97c16; dressing: mushrooms; gridColor: #ffffff"
@@ -165,16 +176,17 @@
 
 </a-entity>
 
-
+        </a-scene>
         
         <script>
-          let target=document.getElementById("nextlevel")
-          target.addEventListener("click", e=>{
-            location.href= "level2.html"
+            let target = document.getElementById("nextlevel")
+            target.addEventListener("click", (e) => {
+                location.href = "level2.html"
             })
 
-        </script>
 
+        </script>
+    <script src="script.js"></script>
         
     </body>
     </html>
