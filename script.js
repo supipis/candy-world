@@ -8,16 +8,32 @@ const shoot = () => {
     bullet.setAttribute('color', '#2684AA');
     bullet.setAttribute('src','cane.glb')
     myScene.appendChild(bullet);
+  bullet.addEventListener('collide', shootCollided)
   };
-  
- /*  document.onkeydown = (event) => {
+
+const shootCollided = event => {
+  if (event.detail.body.el.id === 'floor') {
+    console.log("hit the floor");
+    event.detail.target.el.removeEventListener("collide", shootCollided);
+    myScene.removeChild(event.detail.target.el);
+  } else if (event.detail.body.el.className === 'target-obj') {
+    console.log("hit the target")
+    event.detail.target.el.removeEventListener("collide", shootCollided);
+    myScene.removeChild(event.detail.target.el);
+    myScene.removeChild(event.detail.body.el);
+  }
+  if (document.querySelectorAll('.target-obj').length === 0) {
+    alert('you win')
+  }
+}
+
+document.onkeydown = (event) => {
     if (event.which == 32) {
       shoot();
     }
   };
   
-  document.addEventListener('updateButtons', () => {
-    if (isPressed('RT')) {
-      shoot();
-    }
-  }); */
+
+
+
+

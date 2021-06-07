@@ -3,11 +3,14 @@
 <head>
     <script src="https://unpkg.com/aframe@latest"></script>
     <script src="https://unpkg.com/aframe-environment-component@1.2.0/dist/aframe-environment-component.min.js"></script>
-    
+    <script src="https://unpkg.com/aframe-event-set-component@5.0.0/dist/aframe-event-set-component.min.js"></script>
 </head>
     <body>
         
-        <a-scene background="" environment="preset: forest; skyType: gradient; skyColor: #008bf5; horizonColor: #f2d778; ground: spikes; groundTexture: walkernoise; groundColor: #a1c9d3; groundColor2: #e97c16; dressing: mushrooms; gridColor: #ffffff" inspector="" keyboard-shortcuts="" screenshot="" vr-mode-ui="" device-orientation-permission-ui="" fog="color: #c8c38a; far: 83.99999999999999; density: 0" visible="">
+        <a-scene background=""
+            environment="preset: forest; skyType: gradient; skyColor: #008bf5; horizonColor: #f2d778; ground: spikes; groundTexture: walkernoise; groundColor: #a1c9d3; groundColor2: #e97c16; dressing: mushrooms; gridColor: #ffffff"
+            inspector="" keyboard-shortcuts="" screenshot="" vr-mode-ui="" device-orientation-permission-ui=""
+            fog="color: #c8c38a; far: 83.99999999999999; density: 0" visible="" renderer="physicallyCorrectLights: true">
             <a-camera position="-40.45 1.6 80">
                 <a-cursor intersection-spawn="event: click; mixin: voxel"></a-cursor>
             </a-camera>
@@ -47,28 +50,131 @@
         
     
     <a-entity class="doors">
-    <a-box dynamic-body id="nextlevel" position="25 5 22.148" scale="4 10 0.5" color="red" material="" geometry=""></a-box>
-    <a-box id=normal2></a-box>
-    <a-box id=normal3></a-box>
-    <a-box id=normal4></a-box>
-    <a-box id=normal5></a-box>
-    <a-box id=normal6></a-box>
-    <a-box id=normal7></a-box>
-    <a-box id=normal8></a-box>
-    <a-box id=normal9></a-box>
-    <a-box id=normal10></a-box>
-</a-entity>
-    
+        <a-entity class="door_text_1">
+            <a-gltf-model static-body id="door4" src="door.glb" position="25 -7 22.148" gltf-model="door.glb" scale="3 5 3"
+                rotation="0 275 0" visible="true" event-set__textvisible="_event: click; _target: #wrong_door; visible: true;">
+            </a-gltf-model>
+            <a-entity id="wrong_door" position="29 3.07563 25.21873" rotation="0 360 0" visible="false" opacity="999"
+                text="value: Oops..wrong door!; color: black; width: 7">
+            </a-entity>
+        </a-entity>
         
-    
-        </a-scene>
+        <a-entity class="door_text_2">
+            <a-gltf-model id="door1" src="door.glb" position="49.16191 -7 51.78011" scale="3 5 3" rotation="0 275 0"
+                gltf-model="door.glb" visible="true"
+                event-set__textvisible="_event: click; _target: #wrong_door2; visible: true;">
+            </a-gltf-model>
+            <a-entity id="wrong_door2" position="53 4.07563 52.21873" rotation="0 360 0" visible="false" opacity="999"
+                text="value: Oops..wrong door!; color: black; width: 7">
+            </a-entity>
+        </a-entity>
+        
+        <a-entity class="door_text_3">
+            <a-gltf-model id="door2" src="door.glb" position="40 -7 -90" scale="3 5 3" rotation="0 275 0" visible="true"
+                event-set__textvisible="_event: click; _target: #wrong_door3; visible: true;">
+            </a-gltf-model>
+            <a-entity id="wrong_door3" position="45 4.07563 -90" rotation="0 360 0" visible="false" opacity="999"
+                text="value: Oops..wrong door!; color: black; width: 7">
+            </a-entity>
+        </a-entity>
+        
+        <a-entity class="door_text_4">
+            <a-gltf-model id="door3" src="door.glb" position="10 -7 42" scale="3 5 3" rotation="0 275 0" visible="true"
+                event-set__textvisible="_event: click; _target: #wrong_door4; visible: true;">
+            </a-gltf-model>
+            <a-entity id="wrong_door4" position="14 4.07563 42" rotation="0 360 0" visible="false" opacity="999"
+                text="value: Oops..wrong door!; color: black; width: 7">
+            </a-entity>
+        </a-entity>
+        
+        <a-gltf-model id="nextlevel" src="door.glb" position="20 -7 -50" scale="3 5 3" rotation="0 275 0" visible="true">
+        </a-gltf-model>
+        
+        <a-entity class="door_text_5">
+            <a-gltf-model id="door5" src="door.glb" position="-55 -7 70" scale="3 5 3" rotation="0 275 0" visible="true"
+                event-set__textvisible="_event: click; _target: #wrong_door5; visible: true;">
+            </a-gltf-model>
+            <a-entity id="wrong_door5" position="-50 4.07563 70" rotation="0 360 0" visible="false" opacity="999"
+                text="value: Oops..wrong door!; color: black; width: 7">
+            </a-entity>
+        </a-entity>
+        
+        
+        <a-entity class="door_text_6">
+            <a-gltf-model id="door6" src="door.glb" position="60 -7 10" scale="3 5 3" rotation="0 275 0" visible="true"
+                event-set__textvisible="_event: click; _target: #wrong_door6; visible: true;">
+            </a-gltf-model>
+            <a-entity id="wrong_door6" position="64 4.07563 10" rotation="0 360 0" visible="false" opacity="999"
+                text="value: Oops..wrong door!; color: black; width: 7">
+            </a-entity>
+        </a-entity>
+        
+        <a-entity class="door_text_7">
+            <a-gltf-model id="door7" src="door.glb" position="-65 -7 -80" scale="3 5 3" rotation="0 275 0" visible="true"
+                event-set__textvisible="_event: click; _target: #wrong_door7; visible: true;">
+            </a-gltf-model>
+            <a-entity id="wrong_door7" position="-65 4.07563 -80" rotation="0 360 0" visible="false" opacity="999"
+                text="value: Oops..wrong door!; color: black; width: 7">
+            </a-entity>
+        </a-entity>
+        
+        <a-entity class="door_text_8">
+            <a-gltf-model id="door8" src="door.glb" position="-25 -7 30" scale="3 5 3" rotation="0 275 0" visible="true"
+                event-set__textvisible="_event: click; _target: #wrong_door8; visible: true;">
+            </a-gltf-model>
+            <a-entity id="wrong_door8" position="-25 4.07563 30" rotation="0 360 0" visible="false" opacity="999"
+                text="value: Oops..wrong door!; color: black; width: 7">
+            </a-entity>
+        </a-entity>
+        
+        <a-entity class="door_text_9">
+            <a-gltf-model id="door9" src="door.glb" position="-15 -7 -70" scale="3 5 3" rotation="0 275 0" visible="true"
+                event-set__textvisible="_event: click; _target: #wrong_door9; visible: true;">
+            </a-gltf-model>
+            <a-entity id="wrong_door9" position="-15 4.07563 -70" rotation="0 360 0" visible="false" opacity="999"
+                text="value: Oops..wrong door!; color: black; width: 7; baseline:">
+            </a-entity>
+        </a-entity>
+        
+        <a-entity class="door_text_10">
+            <a-gltf-model id="door10" src="door.glb" position="35 -7 -60" scale="3 5 3" rotation="0 275 0" visible="true"
+                event-set__textvisible="_event: click; _target: #wrong_door10; visible: true;">
+            </a-gltf-model>
+            <a-entity id="wrong_door10" position="35 4.07563 -60" rotation="0 360 0" visible="false" opacity="999"
+                text="value: Oops..wrong door!; color: black; width: 7">
+            </a-entity>
+        </a-entity>
+        
+        <a-entity class="door_text_11">
+            <a-gltf-model id="door11" src="door.glb" position="-35 -7 -60" scale="3 5 3" rotation="0 275 0" visible="true"
+                event-set__textvisible="_event: click; _target: #wrong_door11; visible: true;">
+            </a-gltf-model>
+            <a-entity id="wrong_door11" position="-35 4.07563 -60" rotation="0 360 0" visible="false" opacity="999"
+                text="value: Oops..wrong door!; color: #edd012; width: 7">
+            </a-entity>
+        </a-entity>
+        
+        <a-entity class="door_text_12">
+            <a-gltf-model id="door12" src="door.glb" position="-65 -7 5" scale="3 5 3" rotation="0 275 0" visible="true"
+                event-set__textvisible="_event: click; _target: #wrong_door12; visible: true;">
+            </a-gltf-model>
+            <a-entity id="wrong_door12" position="-65 4.07563 5" rotation="0 360 0" visible="false" opacity="999"
+                text="value: Oops..wrong door!; color: black; width: 7">
+            </a-entity>
+        </a-entity>
+
+</a-entity>
+
+
         
         <script>
           let target=document.getElementById("nextlevel")
           target.addEventListener("click", e=>{
             location.href= "level2.html"
             })
+
         </script>
 
+        
     </body>
     </html>
