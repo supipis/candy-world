@@ -16,55 +16,55 @@
       <button id="start" onclick="hide()">START</button>
     </div>
 
-    <a-scene id="myScene">
+    <a-scene id="myScene" renderer="physicallyCorrectLights: true">
       <a-camera id="myCamera" pointer-lock-enabled="true" position="0 1 0">
         <a-cursor intersection-spawn="event: click; mixin: voxel"></a-cursor>
       </a-camera>
-      <a-gltf-model dynamic-body class="target-obj" id="apple" src="apple.glb" position="1 10 -15" scale=".006 .006 .006"
+      <a-gltf-model dynamic-body class="target-obj" id="apple" src="assets/apple.glb" position="1 10 -15" scale=".006 .006 .006"
         restitution="0.2">
       </a-gltf-model>
-      <a-gltf-model dynamic-body class="target-obj" id="banana" src="banana.glb" position="4 7 -3" scale=".0018 .0018 .0018">
+      <a-gltf-model dynamic-body class="target-obj" id="banana" src="assets/banana.glb" position="4 7 -3" scale=".0018 .0018 .0018">
       </a-gltf-model>
-      <a-gltf-model dynamic-body class="target-obj" id="bell" src="bell.glb" position="3 15 -9" scale=".3 .3 .3">
+      <a-gltf-model dynamic-body class="target-obj" id="bell" src="assets/bell.glb" position="3 15 -9" scale=".3 .3 .3">
       </a-gltf-model>
-      <a-gltf-model dynamic-body class="target-obj" id="egg" src="egg.glb" position="4 12 -10" scale=".0007 .0007 .0007">
+      <a-gltf-model dynamic-body class="target-obj" id="egg" src="assets/egg.glb" position="4 12 -10" scale=".0007 .0007 .0007">
      </a-gltf-model>
-      <!-- <a-gltf-model dynamic-body class="target-obj" id="grapes" src="grapes.glb" position="-2 7 -12" scale=".01 .02 .01"> -->
+      <!-- <a-gltf-model dynamic-body class="target-obj" id="grapes" src="assets/grapes.glb" position="-2 7 -12" scale=".01 .02 .01"> -->
       <!-- </a-gltf-model> -->
-      <!-- <a-gltf-model dynamic-body class="target-obj" id="lemons" src="lemons.glb" position="-6 10 -8" scale=".004 .004 .004"> -->
+      <!-- <a-gltf-model dynamic-body class="target-obj" id="lemons" src="assets/lemons.glb" position="-6 10 -8" scale=".004 .004 .004"> -->
       <!-- </a-gltf-model> -->
-      <!-- <a-gltf-model dynamic-body class="target-obj" id="orange" src="orange.glb" position="-2 10 -5" scale=".002 .002 .002"> -->
+      <!-- <a-gltf-model dynamic-body class="target-obj" id="orange" src="assets/orange.glb" position="-2 10 -5" scale=".002 .002 .002"> -->
       <!-- </a-gltf-model> -->
-      <!-- <a-gltf-model dynamic-body class="target-obj" id="pear" src="pear.glb" position="-6 10 -11" scale=".1 .1 .1"> -->
+      <!-- <a-gltf-model dynamic-body class="target-obj" id="pear" src="assets/pear.glb" position="-6 10 -11" scale=".1 .1 .1"> -->
       <!-- </a-gltf-model> -->
-      <!-- <a-gltf-model dynamic-body class="target-obj" id="pine" src="pine.glb" position="1 10 -5" scale=".1 .1 .1"> -->
+      <!-- <a-gltf-model dynamic-body class="target-obj" id="pine" src="assets/pine.glb" position="1 10 -5" scale=".1 .1 .1"> -->
       <!-- </a-gltf-model> -->
-      <a-gltf-model dynamic-body class="target-obj" id="strawberry" src="strawberry.glb" position="2 10 -5" scale=".1 .1 .1">
+      <a-gltf-model dynamic-body class="target-obj" id="strawberry" src="assets/strawberry.glb" position="2 10 -5" scale=".1 .1 .1">
       </a-gltf-model>
       <a-plane static-body id="floor" position="0 -0.02 -4" rotation="-90 0 0" width="1400" height="1400" color="#7BC8A4">
       </a-plane>
-      <a-gltf-model dynamic-body class="target-obj" id="tomato" src="tomato.glb" position="-8 12 -10" scale=".1 .1 .1">
+      <a-gltf-model dynamic-body class="target-obj" id="tomato" src="assets/tomato.glb" position="-8 12 -10" scale=".1 .1 .1">
       </a-gltf-model>
-      <a-gltf-model dynamic-body class="target-obj" id="apple1" src="apple.glb" position="5 10 -5" scale=".006 .006 .006">
+      <a-gltf-model dynamic-body class="target-obj" id="apple1" src="assets/apple.glb" position="5 10 -5" scale=".006 .006 .006">
       </a-gltf-model>
-      <!-- <a-gltf-model dynamic-body class="target-obj" id="banana1" src="banana.glb" position="-7 7 -7"
-                    scale=".0018 .0018 .0018">-->
+      <a-gltf-model dynamic-body class="target-obj" id="banana1" src="assets/banana.glb" position="-7 7 -7"
+                    scale=".0018 .0018 .0018">
       
-      <!-- <a-gltf-model dynamic-body class="target-obj" id="bell1" src="bell.glb" position="6 15 8" scale=".3 .3 .3"> -->
+      <a-gltf-model dynamic-body class="target-obj" id="bell1" src="assets/bell.glb" position="6 15 8" scale=".3 .3 .3">
+      </a-gltf-model>
+      <!-- <a-gltf-model dynamic-body class="target-obj" id="egg1" src="assets/egg.glb" position="-3 12 -10" scale=".0007 .0007 .0007"> -->
       <!-- </a-gltf-model> -->
-      <!-- <a-gltf-model dynamic-body class="target-obj" id="egg1" src="egg.glb" position="-3 12 -10" scale=".0007 .0007 .0007"> -->
+      <!-- <a-gltf-model dynamic-body class="target-obj" id="grapes1" src="assets/grapes.glb" position="-5 7 -12" scale=".01 .02 .01"> -->
       <!-- </a-gltf-model> -->
-      <!-- <a-gltf-model dynamic-body class="target-obj" id="grapes1" src="grapes.glb" position="-5 7 -12" scale=".01 .02 .01"> -->
+      <!-- <a-gltf-model dynamic-body class="target-obj" id="lemons1" src="assets/lemons.glb" position="6 10 -4" scale=".004 .004 .004"> -->
       <!-- </a-gltf-model> -->
-      <!-- <a-gltf-model dynamic-body class="target-obj" id="lemons1" src="lemons.glb" position="6 10 -4" scale=".004 .004 .004"> -->
+      <!-- <a-gltf-model dynamic-body class="target-obj" id="orange1" src="assets/orange.glb" position="-2 10 -15" scale=".002 .002 .002"> -->
       <!-- </a-gltf-model> -->
-      <!-- <a-gltf-model dynamic-body class="target-obj" id="orange1" src="orange.glb" position="-2 10 -15" scale=".002 .002 .002"> -->
+      <!-- <a-gltf-model dynamic-body class="target-obj" id="pear1" src="assets/pear.glb" position="8 10 -11" scale=".1 .1 .1"> -->
       <!-- </a-gltf-model> -->
-      <!-- <a-gltf-model dynamic-body class="target-obj" id="pear1" src="pear.glb" position="8 10 -11" scale=".1 .1 .1"> -->
+      <!-- <a-gltf-model dynamic-body class="target-obj" id="pine" src="assets/pine.glb" position="11 10 -5" scale=".1 .1 .1"> -->
       <!-- </a-gltf-model> -->
-      <!-- <a-gltf-model dynamic-body class="target-obj" id="pine" src="pine.glb" position="11 10 -5" scale=".1 .1 .1"> -->
-      <!-- </a-gltf-model> -->
-      <!-- <a-gltf-model dynamic-body class="target-obj" id="strawberry1" src="strawberry.glb" position="-3 10 -7" -->
+      <!-- <a-gltf-model dynamic-body class="target-obj" id="strawberry1" src="assets/strawberry.glb" position="-3 10 -7" -->
       <!--   scale=".1 .1 .1"> -->
       </a-gltf-model>
       <a-plane static-body id="floor" position="0 -0.02 -4" rotation="-90 0 0" width="1400" height="1400" color="#7BC8A4">
@@ -76,7 +76,7 @@
   
   <script>
       var myScene = document.getElementById('myScene');
-var myCamera = document.getElementById('myCamera');
+      var myCamera = document.getElementById('myCamera');
 
 function getDirection(camera, speed) {
     // you can find this code snippet at
@@ -106,6 +106,17 @@ function getDirection(camera, speed) {
 }
 
 
+      function hide() {
+          let x = document.getElementById('hide-div')
+          if (x.style.display === "none") {
+              x.style.display = "block";
+          } else {
+              x.style.display = "none";
+          }
+      }
+
+
   </script>
   <script src="script.js"></script>
+</body>
 </html>

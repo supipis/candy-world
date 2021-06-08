@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="https://unpkg.com/aframe@latest"></script>
+    <script src="https://unpkg.com/aframe-environment-component@1.2.0/dist/aframe-environment-component.min.js"></script>
+    <script src="https://unpkg.com/aframe-event-set-component@5.0.0/dist/aframe-event-set-component.min.js"></script>
+    <link rel="stylesheet" href="styles.css">
+    <script>
+        AFRAME.registerComponent("cursor-listener", {
+            schema: {
+                url: {type: "string", default: ""}
+            },
+            init: function () {
+                const url = this.data.url;
+                this.el.addEventListener("click", function (evt) {
+                    this.setAttribute("material", "visible", "false");
+                    if (url !== "") window.location.href = url;
+                });
+            }
+        })
+                </script>
+</head>
+<body>
+<div class="instruction-container" id="hide-div">
+    <h2>The Sweet Treats</h2>
+    <p>The little girl is still stuck in the candy land and you are doing your best to help her out.
+        As a reward we have decided to treat you with sweets.<br><br>
+        Look around <em><b>click</b></em> on treats to collect them. Candy man will guide to escape from the candy land
+    </p>
+    <button id="start" onclick="hide()">START</button>
+
+</div>
+
+<a-scene id="scene" environment="preset: forest; skyType: gradient; skyColor: #008bf5; horizonColor: #f2d778; ground: spikes; groundTexture: walkernoise; groundColor: #a1c9d3; groundColor2: #e97c16; dressing: mushrooms; gridColor: #ffffff"
+         inspector="" keyboard-shortcuts="" screenshot="" vr-mode-ui="" device-orientation-permission-ui=""
+         fog="color: #c8c38a; far: 83.99999999999999; density: 0" visible="" renderer="physicallyCorrectLights: true">
+    <a-camera position="-40.45 1.6 80">
+        <a-cursor intersection-spawn="event: click; mixin: voxel"></a-cursor>
+    </a-camera>
+
+    <a-assets>
+        <audio id="didit" src="assets/didit.mp3"></audio>
+    </a-assets>
+
+<a-entity class="sweets" cursor-listener>
+    <a-gltf-model  id="donut" src="assets/donut1.glb" position="0 0 11" scale=".2 .2 .2" rotation="" event-set__sweetinvisible="_event: click; _target: #donut; visible: false;"
+                   sound="src: #didit; on:click">
+    </a-gltf-model>
+</a-entity>
+
+    <a-entity class="sweets">
+    <a-gltf-model id="toffee" src="assets/toffee.glb" position="20 0 15" scale=".5 .5 .5" rotation="" event-set__sweetinvisible="_event: click; _target: #toffee; visible: false;"
+                  sound="src: #didit; on:click">
+    </a-gltf-model>
+    </a-entity>
+
+    <a-entity class="sweets">
+        <a-gltf-model id="icecream" src="assets/icecream.glb" position="-15 0 45" scale=".2 .2 .2" rotation="" event-set__sweetinvisible="_event: click; _target: #icecream; visible: false;"
+                      sound="src: #didit; on:click">
+    </a-gltf-model>
+        </a-entity>
+
+    <a-entity class="sweets">
+    <a-gltf-model id="sugarcane" src="assets/sugarcane.glb" position="0 0 37" scale=".3 .3 .3" rotation="" event-set__sweetinvisible="_event: click; _target: #sugarcane; visible: false;"
+                  sound="src: #didit; on:click">
+    </a-gltf-model>
+            </a-entity>
+
+    <a-entity class="sweets">
+    <a-gltf-model class="sweets" id="cupcake" src="assets/cupcake.glb" position="-25 .5 30" scale=".01 .01 .01" rotation="0 0 0" event-set__sweetinvisible="_event: click; _target: #cupcake; visible: false;"
+                  sound="src: #didit; on:click">
+    </a-gltf-model>
+                </a-entity>
+
+    <a-entity class="sweets">
+    <a-gltf-model class="sweets" id="cookie" src="assets/cookie.glb" position="60 .5 25" scale="4 4 4" rotation="" event-set__sweetinvisible="_event: click; _target: #cookie; visible: false;"
+                  sound="src: #didit; on:click">
+    </a-gltf-model>
+                    </a-entity>
+
+    <a-entity class="sweets">
+    <a-gltf-model class="sweets" id="pie" src="assets/pie.glb" position="-55 0.2 7" scale=".4 .4 .4" rotation="" event-set__sweetinvisible="_event: click; _target: #pie; visible: false;"
+                  sound="src: #didit; on:click">
+    </a-gltf-model>
+                        </a-entity>
+
+    <a-entity class="sweets">
+    <a-gltf-model class="sweets" id="lolli" src="assets/lolli.glb" position="40 1 11" scale="2 2 2" rotation="" event-set__sweetinvisible="_event: click; _target: #lolli; visible: false;"
+                  sound="src: #didit; on:click">
+    </a-gltf-model>
+                            </a-entity>
+
+    <a-entity class="sweets">
+    <a-gltf-model class="sweets" id="pop" src="assets/pop.glb" position="-15 1 11" scale="2 2 2" rotation="0 90 0" event-set__sweetinvisible="_event: click; _target: #pop; visible: false;"
+                  sound="src: #didit; on:click">
+    </a-gltf-model>
+                                </a-entity>
+
+    <a-entity class="sweets">
+    <a-gltf-model class="sweets" id="choco" src="assets/choco.glb" position="-30 0 11" scale=".3 .3 .3" rotation="" event-set__sweetinvisible="_event: click; _target: #choco; visible: false;"
+                  sound="src: #didit; on:click">
+    </a-gltf-model>
+                                    </a-entity>
+
+    <a-entity class="sweets">
+    <a-gltf-model class="sweets" id="donut1" src="assets/donut1.glb" position="60 0 -10" scale=".2 .2 .2" rotation="" event-set__sweetinvisible="_event: click; _target: #donut1; visible: false;"
+                  sound="src: #didit; on:click">
+    </a-gltf-model>
+                                        </a-entity>
+
+    <a-entity class="sweets">
+    <a-gltf-model class="sweets" id="toffee1" src="assets/toffee.glb" position="45 0 -15" scale=".5 .5 .5" rotation="" event-set__sweetinvisible="_event: click; _target: #toffee1; visible: false;"
+                  sound="src: #didit; on:click">
+    </a-gltf-model>
+                                            </a-entity>
+
+    <a-entity class="sweets">
+    <a-gltf-model class="sweets" id="icecream1" src="assets/icecream.glb" position="50 0 20" scale=".2 .2 .2" rotation="" event-set__sweetinvisible="_event: click; _target: #icecream1; visible: false;"
+                  sound="src: #didit; on:click">
+    </a-gltf-model>
+                                                </a-entity>
+
+    <a-entity class="sweets">
+    <a-gltf-model class="sweets" id="sugarcane1" src="assets/sugarcane.glb" position="90 0 30" scale=".3 .3 .3" rotation="" event-set__sweetinvisible="_event: click; _target: #sugarcane1; visible: false;"
+                  sound="src: #didit; on:click">
+    </a-gltf-model>
+                                                    </a-entity>
+
+    <a-entity class="sweets">
+    <a-gltf-model class="sweets" id="cupcake1" src="assets/cupcake.glb" position="45 .5 70" scale=".01 .01 .01" rotation="0 0 0" event-set__sweetinvisible="_event: click; _target: #cupcake1; visible: false;"
+                  sound="src: #didit; on:click">
+    </a-gltf-model>
+    </a-entity>
+
+    <a-entity class="sweets">
+    <a-gltf-model id="cookie1" src="assets/cookie.glb" position="-25 .5 -35" scale="4 4 4" rotation="" event-set__sweetinvisible="_event: click; _target: #cookie1; visible: false;"
+                  sound="src: #didit; on:click">
+    </a-gltf-model>
+    </a-entity>
+
+    <a-entity class="sweets">
+    <a-gltf-model id="pie1" src="assets/pie.glb" position="55 0.2 17" scale=".4 .4 .4" rotation="" event-set__sweetinvisible="_event: click; _target: #pie1; visible: false;"
+                  sound="src: #didit; on:click">
+    </a-gltf-model>
+    </a-entity>
+
+    <a-entity class="sweets">
+    <a-gltf-model id="lolli1" src="assets/lolli.glb" position="90 1 24" scale="2 2 2" rotation="" event-set__sweetinvisible="_event: click; _target: #lolli1; visible: false;"
+                  sound="src: #didit; on:click">
+    </a-gltf-model>
+    </a-entity>
+
+    <a-entity class="sweets">
+    <a-gltf-model id="pop1" src="assets/pop.glb" position="45 1 -33" scale="2 2 2" rotation="0 90 0" event-set__sweetinvisible="_event: click; _target: #pop1; visible: false;"
+                  sound="src: #didit; on:click">
+    </a-gltf-model>
+    </a-entity>
+
+    <a-entity class="sweets">
+    <a-gltf-model id="choco1" src="assets/choco.glb" position="80 0 1" scale=".3 .3 .3" rotation="" event-set__sweetinvisible="_event: click; _target: #choco1; visible: false;"
+                  sound="src: #didit; on:click">
+    </a-gltf-model>
+    </a-entity>
+
+
+    <a-entity>
+    <a-gltf-model id="candyman" src="assets/candyman.glb" position="72 -3.5 -93" scale="3 3 3" rotation="0 -45 0" cursor-listener="url: level4.html"
+                  sound="src: #didit; on:click">
+    </a-gltf-model>
+    </a-entity>
+
+</a-scene>
+
+<script>
+    function hide() {
+        let x = document.getElementById('hide-div')
+        if (x.style.display === "none") {
+            x.style.display = "block";
+        } else {
+            x.style.display = "none";
+        }
+    }
+
+    if (document.querySelectorAll('.sweets').length=== 0) {
+        console.log('you won')
+    }
+</script>
+</body>
+</html>

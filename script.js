@@ -23,9 +23,11 @@ const shootCollided = event => {
     myScene.removeChild(event.detail.body.el);
   }
   if (document.querySelectorAll('.target-obj').length === 0) {
-    alert('you win')
+      console.log('you won')
+      location.href= "level3.html"
   }
 }
+
 
 document.onkeydown = (event) => {
     if (event.which == 32) {
@@ -33,14 +35,6 @@ document.onkeydown = (event) => {
     }
   };
 
-function hide() {
-  let x = document.getElementById('hide-div')
-  if (x.style.display === "none") {
-    x.style.display = "block";
-  } else {
-    x.style.display = "none";
-  }
-}
 
 
 

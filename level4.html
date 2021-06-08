@@ -1,0 +1,25 @@
+<html>
+<head>
+    <script src="https://unpkg.com/aframe@1.0.0/dist/aframe-master.js"></script>
+    <script src="https://unpkg.com/aframe-particle-system-component@1.0.x/dist/aframe-particle-system-component.min.js"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="instruction-container" id="hide-div">
+    <h1>Congratulations!</h1>
+    <p>You helped the girl to escape from the candy land.
+    One step closer to waking her up.<br><br>
+    Keep Going..!!</p>
+</div>
+<a-scene>
+    <a-assets>
+        <audio id="fire" src="assets/fire.mp3"></audio>
+    </a-assets>
+
+    <a-sound src="url(assets/fire.mp3)" autoplay="true"
+             position="0 0 0" loop="true" volume=""></a-sound>
+    <a-entity position="0 -5 -10" particle-system="color: #EF0000,#44CC00"></a-entity>
+    <a-entity fbx-model="src: url(Hip Hop Dancing.fbx);" animation-mixer="clip: *;" position="0 -5 -10" z-index="999"></a-entity>
+</a-scene>
+</body>
+</html>
