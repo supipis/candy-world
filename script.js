@@ -24,7 +24,7 @@ const shootCollided = event => {
   }
   if (document.querySelectorAll('.target-obj').length === 0) {
       console.log('you won')
-      location.href= "level3.html"
+      location.href= "https://www.supipi.nu/candy-world/level3.html"
   }
 }
 
